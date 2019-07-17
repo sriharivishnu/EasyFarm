@@ -48,12 +48,12 @@
 
     <ImageView
         android:id="@+id/login_logo"
-        android:layout_width="339dp"
-        android:layout_height="146dp"
+        android:layout_width="305dp"
+        android:layout_height="124dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="41dp"
-        android:scaleType="center"
+        android:scaleType="fitXY"
         android:src="@drawable/logo_text"
         android:visibility="visible"
         app:layout_constraintHorizontal_bias="0.517"

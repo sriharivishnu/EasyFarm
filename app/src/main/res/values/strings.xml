@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">EasyFarm</string>
+
+    <string name="google_map_api_key">AIzaSyD_Qyb5oqDyofT18uS5vEGQEQVMOu6lg8k</string>
 </resources>
