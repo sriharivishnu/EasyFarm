@@ -29,7 +29,7 @@ public class ShoppingFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        String[] user_items = {"Bananas", "Cheese"};
+        String[] user_items = {"Bananas", "Cheese", "Milk", "Bread"};
         items = new ArrayList<>(Arrays.asList(user_items));
         View view = inflater.inflate(R.layout.fragment_cart, container, false);
         cart = view.findViewById(R.id.shopping_list);
@@ -42,6 +42,9 @@ public class ShoppingFragment extends Fragment {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 if (i>=items.size()) {
                     addToShoppingList();
+                }
+                else {
+
                 }
             }
         });

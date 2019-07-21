@@ -10,15 +10,19 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class ShoppingAdapter extends BaseAdapter {
 
     Context context;
-    ArrayList<String> items;
+    ArrayList<String> items, items2;
     CheckBox item;
+    boolean which;
+    ArrayList<Integer> images;
 
 
     private static LayoutInflater inflater = null;
@@ -27,14 +31,34 @@ public class ShoppingAdapter extends BaseAdapter {
         // TODO Auto-generated constructor stub
         this.context = context;
         this.items = items;
+        this.which = true;
 
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+    }
+
+    public ShoppingAdapter(Context context, ArrayList<String> items,ArrayList<String> items2, ArrayList<Integer> images) {
+        // TODO Auto-generated constructor stub
+        this.context = context;
+        this.items = items;
+        this.items2 = items2;
+        this.which = false;
+        this.images = images;
+
+        inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
     }
 
     @Override
     public int getCount() {
         // TODO Auto-generated method stub
-        return items.size()+1;
+        if (which) {
+            return items.size() + 1;
+        }
+        else {
+            return items.size();
+        }
+
     }
 
     @Override
@@ -56,14 +80,26 @@ public class ShoppingAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         // TODO Auto-generated method stub
         View vi = convertView;
-        if (position<items.size()) {
-            vi = inflater.inflate(R.layout.row_cart, null);
-            item = vi.findViewById(R.id.cart_item);
-            item.setText(items.get(position));
+        if (which) {
+            if (position < items.size()) {
+                vi = inflater.inflate(R.layout.row_cart, null);
+                item = vi.findViewById(R.id.cart_item);
+                item.setText(items.get(position));
+            } else {
+                vi = inflater.inflate(R.layout.row_add, null);
+            }
         }
         else {
-            vi = inflater.inflate(R.layout.row_add, null);
+            vi = inflater.inflate(R.layout.row_chat, null);
+            TextView name = vi.findViewById(R.id.row_title);
+            TextView remaining = vi.findViewById(R.id.chat_body);
+            ImageView image = vi.findViewById(R.id.row_image);
+
+            name.setText(items.get(position));
+            remaining.setText(items2.get(position));
+            image.setImageResource(images.get(position));
         }
+
 
 
         return vi;

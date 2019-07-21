@@ -28,7 +28,7 @@ public class ShowMarket extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_market);
         String[] vendors = {"John and Johnson's","Fresh Greenery", "Good Foods"};
-        String[] products = {"Grapes", "Apples", "Bananas"};
+        String[] products = {"Bananas", "Apples", "Grapes"};
         Integer[] parent_images = {R.drawable.stall, R.drawable.stall1, R.drawable.stall2};
         Integer[] child_images =  {R.drawable.banana, R.drawable.apples, R.drawable.grapes};
         farmers_title = findViewById(R.id.title_farmers_market);
@@ -47,22 +47,22 @@ public class ShowMarket extends AppCompatActivity {
         vendors_show = findViewById(R.id.vendors_listview);
         double longitude = getIntent().getDoubleExtra("Longitude", 0.0);
         double latitude = getIntent().getDoubleExtra("Latitude", 0.0);
-        try {
-            Geocoder geo = new Geocoder(ShowMarket.this.getApplicationContext(), Locale.getDefault());
-            List<Address> addresses = geo.getFromLocation(latitude, longitude, 1);
-            if (addresses.isEmpty()) {
-                address_field.setText("234 Farmers Road");
-            }
-            else {
-                if (addresses.size() > 0) {
-                    address_field.setText(addresses.get(0).getFeatureName() + ", " + addresses.get(0).getLocality() +", " + addresses.get(0).getAdminArea() + ", " + addresses.get(0).getCountryName());
-                    //Toast.makeText(getApplicationContext(), "Address:- " + addresses.get(0).getFeatureName() + addresses.get(0).getAdminArea() + addresses.get(0).getLocality(), Toast.LENGTH_LONG).show();
-                }
-            }
-        }
-        catch (Exception e) {
-            e.printStackTrace(); // getFromLocation() may sometimes fail
-        }
+//        try {
+//            Geocoder geo = new Geocoder(ShowMarket.this.getApplicationContext(), Locale.getDefault());
+//            List<Address> addresses = geo.getFromLocation(latitude, longitude, 1);
+//            if (addresses.isEmpty()) {
+//                address_field.setText("234 Farmers Road");
+//            }
+//            else {
+//                if (addresses.size() > 0) {
+//                    address_field.setText(addresses.get(0).getFeatureName() + ", " + addresses.get(0).getLocality() +", " + addresses.get(0).getAdminArea() + ", " + addresses.get(0).getCountryName());
+//                    //Toast.makeText(getApplicationContext(), "Address:- " + addresses.get(0).getFeatureName() + addresses.get(0).getAdminArea() + addresses.get(0).getLocality(), Toast.LENGTH_LONG).show();
+//                }
+//            }
+//        }
+//        catch (Exception e) {
+//            e.printStackTrace(); // getFromLocation() may sometimes fail
+//        }
         ArrayList<String> temp = new ArrayList<>(Arrays.asList(vendors));
         ArrayList<String> temp1 = new ArrayList<>(Arrays.asList(products));
         ArrayList<Integer> temp2 = new ArrayList<>(Arrays.asList(parent_images));
@@ -70,13 +70,6 @@ public class ShowMarket extends AppCompatActivity {
 
         ExpandableListAdapter expandableListView = new ExpandableListAdapter(this, temp, temp1, temp2, temp3);
         vendors_show.setAdapter(expandableListView);
-        vendors_show.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
-            @Override
-            public boolean onGroupClick(ExpandableListView expandableListView, View view, int i, long l) {
-                Toast.makeText(getBaseContext(), "kjfs", Toast.LENGTH_LONG).show();
-                return false;
-            }
-        });
 
     }
 }

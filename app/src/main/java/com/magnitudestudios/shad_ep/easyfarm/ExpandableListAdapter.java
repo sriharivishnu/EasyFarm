@@ -48,7 +48,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
         title.setText(options.get(expandedListPosition));
 
         ImageView image_child = convertView.findViewById(R.id.row_image);
-        image_child.setImageResource(child_images.get(listPosition));
+        image_child.setImageResource(child_images.get(expandedListPosition));
 
         return convertView;
     }

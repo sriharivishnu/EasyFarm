@@ -27,7 +27,6 @@ public class MyAdapter extends BaseAdapter {
     ArrayList<String> bodies;
     ArrayList<ViewHolder> viewHolders;
 
-    CountDownTimer countDownTimer;
     private Handler mHandler = new Handler();
     private Runnable updateRemainingTimeRunnable = new Runnable() {
         @Override

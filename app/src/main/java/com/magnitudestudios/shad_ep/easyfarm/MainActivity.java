@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.navigation_home:
                     selectedFragment = HomeFragment.newInstance();
                     break;
-                case R.id.navigation_favourites:
+                case R.id.navigation_community:
                     selectedFragment = CommunityFragment.newInstance();
                     break;
                 case R.id.navigation_cart:

@@ -9,7 +9,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -35,6 +38,7 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Google
     private ListView ads;
     private ArrayList<Integer> images;
     private ArrayList<String> titles, bodies;
+    private ProgressBar progressBar;
     private int item;
     private boolean threadState;
     private boolean runThread;
@@ -58,6 +62,8 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Google
         item = 0;
 
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+
+        progressBar = view.findViewById(R.id.progressBar2);
         mMapView = view.findViewById(R.id.mapView);
 
         mMapView.onCreate(savedInstanceState);
@@ -66,6 +72,16 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Google
         final MyAdapter adapter = new MyAdapter(getContext(),images, titles, bodies);
         ads = view.findViewById(R.id.ads_listview);
         ads.setAdapter(adapter);
+        ads.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(getActivity(), ShowMarket.class);
+                intent.putExtra("Name", "Baseline Farmers Market");
+                intent.putExtra("Longitude", -113.2993);
+                intent.putExtra("Latitude", 53.4085);
+                startActivity(intent);
+            }
+        });
 
         runThread = true;
         threadState = false;
@@ -86,7 +102,6 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Google
                                             ads.post(new Runnable() {
                                                 @Override
                                                 public void run() {
-                                                    // Select the last row so it will scroll into view...
                                                     item++;
                                                     if (item > adapter.getCount()) {
                                                         item = 0;
@@ -110,11 +125,13 @@ public class HomeFragment extends Fragment implements OnMapReadyCallback, Google
     }
     @Override
     public boolean onMarkerClick(final Marker marker) {
+        progressBar.setVisibility(View.VISIBLE);
         Intent intent = new Intent(getActivity(), ShowMarket.class);
         intent.putExtra("Name", marker.getTitle());
         intent.putExtra("Longitude", marker.getPosition().longitude);
         intent.putExtra("Latitude", marker.getPosition().latitude);
         startActivity(intent);
+        progressBar.setVisibility(View.GONE);
         return true;
     }
 
