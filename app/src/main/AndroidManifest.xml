@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,9 +23,8 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyD_Qyb5oqDyofT18uS5vEGQEQVMOu6lg8k" />
 
-        <activity android:name=".SettingsActivity">
-
-        </activity>
+        <activity android:name=".SettingsActivity"></activity>
+        <activity android:name=".ShowMarket"></activity>
     </application>
 
 </manifest>

@@ -7,11 +7,9 @@
 
     <ListView
         android:id="@+id/shopping_list"
-        android:layout_width="344dp"
+        android:layout_width="0dp"
         android:layout_height="464dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

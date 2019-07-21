@@ -14,12 +14,13 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageButton;
 
-import com.magnitudestudios.shad_ep.easyfarm.R;
-
 
 public class MainActivity extends AppCompatActivity {
     private BottomNavigationView navigation;
     private ImageButton settingsButton;
+    public static boolean threadState;
+    public static boolean runThread;
+
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
                     selectedFragment = HomeFragment.newInstance();
                     break;
                 case R.id.navigation_favourites:
-                    selectedFragment = FavouritesFragment.newInstance();
+                    selectedFragment = CommunityFragment.newInstance();
                     break;
                 case R.id.navigation_cart:
                     selectedFragment = ShoppingFragment.newInstance();

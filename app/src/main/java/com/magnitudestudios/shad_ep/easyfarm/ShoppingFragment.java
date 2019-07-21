@@ -1,11 +1,13 @@
 package com.magnitudestudios.shad_ep.easyfarm;
 
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -34,6 +36,27 @@ public class ShoppingFragment extends Fragment {
 
         ShoppingAdapter adapter = new ShoppingAdapter(getContext(), items);
         cart.setAdapter(adapter);
+
+        cart.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                if (i>=items.size()) {
+                    addToShoppingList();
+                }
+            }
+        });
         return view;
+    }
+    public void addToShoppingList() {
+        final AddItemDialog addItemDialog = new AddItemDialog(getActivity());
+        addItemDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialogInterface) {
+                items.add(addItemDialog.getItem());
+                cart.setAdapter(new ShoppingAdapter(getContext(), items));
+
+            }
+        });
+        addItemDialog.show();
     }
 }

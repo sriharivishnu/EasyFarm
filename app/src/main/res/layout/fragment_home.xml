@@ -35,6 +35,8 @@
 
     <TextView
         android:id="@+id/map_title"
+        android:textStyle="bold"
+        android:textColor="@color/secondary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -57,6 +59,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Hot Deals"
+        android:textStyle="bold"
+        android:textColor="@color/secondary"
         android:textAlignment="center"
         android:textAppearance="@android:style/TextAppearance.Material.Title"
         app:layout_constraintBottom_toTopOf="@+id/ads_listview"

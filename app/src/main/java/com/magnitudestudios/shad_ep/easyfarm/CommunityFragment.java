@@ -10,10 +10,10 @@ import android.view.ViewGroup;
  * Created by sriharivishnu on 2019-07-16.
  */
 
-public class FavouritesFragment extends Fragment {
+public class CommunityFragment extends Fragment {
 
-    public static FavouritesFragment newInstance() {
-        FavouritesFragment fragment = new FavouritesFragment();
+    public static CommunityFragment newInstance() {
+        CommunityFragment fragment = new CommunityFragment();
         return fragment;
     }
     @Override
@@ -21,7 +21,7 @@ public class FavouritesFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_favourites, container, false);
+        View view = inflater.inflate(R.layout.fragment_community, container, false);
         return view;
     }
 }

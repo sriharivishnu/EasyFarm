@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "766500541719",
+    "firebase_url": "https://silo-282cf.firebaseio.com",
+    "project_id": "silo-282cf",
+    "storage_bucket": "silo-282cf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:766500541719:android:69c468e6d9240c52",
+        "android_client_info": {
+          "package_name": "com.magnitudestudios.shad_ep.easyfarm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "766500541719-7etukq8s2u5niuofotqon7qgp942ijia.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_Qyb5oqDyofT18uS5vEGQEQVMOu6lg8k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "766500541719-7etukq8s2u5niuofotqon7qgp942ijia.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

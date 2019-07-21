@@ -34,12 +34,15 @@ public class ShoppingAdapter extends BaseAdapter {
     @Override
     public int getCount() {
         // TODO Auto-generated method stub
-        return items.size();
+        return items.size()+1;
     }
 
     @Override
     public Object getItem(int position) {
         // TODO Auto-generated method stub
+        if (position>items.size()) {
+            return null;
+        }
         return items.get(position);
     }
 
@@ -53,9 +56,15 @@ public class ShoppingAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         // TODO Auto-generated method stub
         View vi = convertView;
-        vi = inflater.inflate(R.layout.row_cart, null);
-        item = vi.findViewById(R.id.cart_item);
-        item.setText(items.get(position));
+        if (position<items.size()) {
+            vi = inflater.inflate(R.layout.row_cart, null);
+            item = vi.findViewById(R.id.cart_item);
+            item.setText(items.get(position));
+        }
+        else {
+            vi = inflater.inflate(R.layout.row_add, null);
+        }
+
 
         return vi;
     }
