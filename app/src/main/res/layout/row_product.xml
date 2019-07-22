@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="40dp">
+    android:layout_height="40dp"
+    android:background="#595959">
 
     <ImageView
         android:id="@+id/row_image"
@@ -30,6 +31,7 @@
         android:layout_marginEnd="104dp"
         android:layout_marginStart="8dp"
         android:text="Title"
+        android:textColor="@color/white"
         android:textAppearance="@style/TextAppearance.AppCompat.Menu"
         app:layout_constraintBottom_toBottomOf="@+id/row_image"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,6 +48,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
         android:text="$10/lbs"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/row_title"
         app:layout_constraintStart_toStartOf="@+id/row_title"

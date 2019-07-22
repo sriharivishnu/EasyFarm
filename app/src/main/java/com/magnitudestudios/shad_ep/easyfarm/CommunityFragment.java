@@ -1,10 +1,12 @@
 package com.magnitudestudios.shad_ep.easyfarm;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -39,6 +41,14 @@ public class CommunityFragment extends Fragment {
         ShoppingAdapter adapter = new ShoppingAdapter(getContext(), test, chats, images);
         listView = view.findViewById(R.id.chats_listview);
         listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(getActivity(), ShowPost.class);
+                startActivity(intent);
+            }
+        });
         return view;
     }
 }

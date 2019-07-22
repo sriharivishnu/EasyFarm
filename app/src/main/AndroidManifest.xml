@@ -10,12 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity" />
-        <activity android:name=".Login">
+        <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".Login">
         </activity>
         <activity android:name=".Register" />
 
@@ -23,8 +25,10 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyD_Qyb5oqDyofT18uS5vEGQEQVMOu6lg8k" />
 
-        <activity android:name=".SettingsActivity"></activity>
-        <activity android:name=".ShowMarket"></activity>
+        <activity android:name=".SettingsActivity" />
+        <activity android:name=".ShowMarket" />
+        <activity android:name=".ShowPost" />
+
     </application>
 
 </manifest>

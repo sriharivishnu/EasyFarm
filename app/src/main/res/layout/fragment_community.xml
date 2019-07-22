@@ -2,6 +2,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/viewPager"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -13,36 +14,74 @@
         android:layout_marginTop="8dp"
         android:text="Recent Posts Near You"
         android:textAppearance="@android:style/TextAppearance.Material.Title"
+        android:textColor="@color/secondary"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/chats_listview"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.486" />
+        app:layout_constraintVertical_bias="0.629" />
 
     <ListView
         android:id="@+id/chats_listview"
         android:layout_width="344dp"
-        android:layout_height="232dp"
+        android:layout_height="262dp"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.288" />
+        app:layout_constraintVertical_bias="0.254" />
 
     <TextView
         android:id="@+id/most_liked_posts"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="31dp"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
         android:text="Most Liked "
+        android:textColor="@color/secondary"
+        android:textStyle="bold"
         android:textAppearance="@android:style/TextAppearance.Material.Title"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/chats_listview"
-        app:layout_constraintVertical_bias="0.088" />
+        app:layout_constraintVertical_bias="0.212" />
+
+    <ImageButton
+        android:id="@+id/ad_cherry"
+        android:layout_width="326dp"
+        android:layout_height="194dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:background="#00000000"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/most_liked_posts"
+        app:srcCompat="@drawable/cherry_pit" />
+
+    <ImageButton
+        android:id="@+id/add_button"
+        android:layout_width="40dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:background="#00000000"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/community_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/community_title"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/ic_add_box_black_24dp" />
+
 </android.support.constraint.ConstraintLayout>
